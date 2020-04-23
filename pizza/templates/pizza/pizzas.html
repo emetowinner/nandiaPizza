@@ -1,0 +1,14 @@
+<h1>Order a Pizza</h1>
+
+<p> <b> <i>{{ message }}</i> </b> </p>
+<p>Do you want to order more?</p>
+<form action="{% url 'pizzas' %}" method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for form in formset %}
+        {{ form }}
+        <br>
+    {% endfor %}
+    <input type='submit' value='Order Pizzas'>
+<button><a href="{% url 'order' %}"><span>Order Only One</span></a></button>
+</form>
