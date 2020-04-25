@@ -1,4 +1,9 @@
+{% extends 'pizza/base.html' %}
+
+{% block content %}
+
 <h1>Order a Pizza</h1>
+{% load widget_tweaks %}
 
 <p> <b> <i>{{ message }}</i> </b> </p>
 <p>Do you want to order more?</p>
@@ -12,3 +17,5 @@
     <input type='submit' value='Order Pizzas'>
 <button><a href="{% url 'order' %}"><span>Order Only One</span></a></button>
 </form>
+
+{% endblock content %}

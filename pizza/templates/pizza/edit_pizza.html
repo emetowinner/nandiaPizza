@@ -1,0 +1,21 @@
+{% extends 'pizza/base.html' %}
+{% block content %}
+
+<h1>Edit Order</h1>
+{% load widget_tweaks %}
+
+<p> <b> <i>{{ message }}</i> </b> </p>
+<form action="{% url 'edit_order' edit_pizza.id %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Edit Pizza">
+<button><a href="{% url 'order' %}"><span>Order Only One</span></a></button>
+</form>
+
+<p>Do you want to order more?</p>
+<form action="{% url 'pizzas' %}" method="GET">
+    {{ mult_pizza_form }}
+    <input type="submit" value="Order More Pizza">
+</form>
+
+{% endblock content %}
