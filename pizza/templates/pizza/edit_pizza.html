@@ -1,5 +1,8 @@
 {% extends 'pizza/base.html' %}
+
 {% block content %}
+
+<div class="container">
 
 <h1>Edit Order</h1>
 {% load widget_tweaks %}
@@ -17,5 +20,5 @@
     {{ mult_pizza_form }}
     <input type="submit" value="Order More Pizza">
 </form>
-
+</div>
 {% endblock content %}
